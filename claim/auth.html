@@ -69,11 +69,11 @@
                 try {
                   redir = getparam();
                 } catch(err) {
-                  
+
                 }
                 firebase.auth().signInWithEmailAndPassword(email, pass).then(function() {
                   localStorage.setItem('pin', dig);
-                  if(redir){
+                  if(redir != 'undefined'){
                     window.location = './claim.html?c='+redir;
                   }else {
                       window.location = './index.html';
