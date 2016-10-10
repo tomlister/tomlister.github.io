@@ -27,7 +27,7 @@ var claims = [
 ];
 var claiml
 function updateLength() {
-  var userRef = firebase.database().ref('/3298/claims');
+  var userRef = firebase.database().ref('/'+localStorage.getItem('pin')+'/claims');
     userRef.on('value', function(snapshot) {
       claimsobj = snapshot.val();
       claiml = Object.keys(claimsobj).length;
@@ -99,7 +99,7 @@ function genEmail(type) {
   jsonobject["title"] = title;
   jsonobject["statusReason"] = "";
   jsonobject["hash"] = hashPin();
-  var claimsRef = firebase.database().ref('/3298/claims/'+claimNum);
+  var claimsRef = firebase.database().ref('/'+localStorage.getItem('pin')+'/claims/'+claimNum);
   claimsRef.set(jsonobject);
   updateLength();
   var trampolineRef = firebase.database().ref('/trampolines/'+randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'));
@@ -107,7 +107,7 @@ function genEmail(type) {
 }
 
 function getHistory() {
-  var userRef = firebase.database().ref('/3298/claims');
+  var userRef = firebase.database().ref('/'+localStorage.getItem('pin')+'/claims');
 	userRef.on('value', function(snapshot) {
     $('.history-ul').empty();
     $('.history-ul').append('<hr>');
