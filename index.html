@@ -12,7 +12,9 @@
   background:#777;
 }
     </style>
-    <script>var canvas = document.getElementById('canvas'),
+    <script>
+    window.onload = function() {
+    var canvas = document.getElementById('canvas'),
     ctx = canvas.getContext('2d');
 
 function resize() {
@@ -49,6 +51,7 @@ var toggle = true;
     noise(ctx);
     requestAnimationFrame(loop);
 })();
+}
 </script>
   </head>
   <body>
