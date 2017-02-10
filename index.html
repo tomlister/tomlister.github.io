@@ -8,11 +8,7 @@
     <script>
       var md = "Hello.\n\n* This is markdown.\n* It is fun\n* Love it or leave it.";
       function Viewer(mdc) {
-        this.update = function () {
-          mdc.innerHTML = markdown.toHTML(md);
-        };
-        input.editor = this;
-        this.update();
+        mdc.innerHTML = markdown.toHTML(md);
       }
       var $ = function (id) { return document.getElementById(id); };
       new Viewer($("mdc"));
