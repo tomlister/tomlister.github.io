@@ -2,12 +2,18 @@
 html, body {
   font-family: "Open Sans";
   padding: none;
-  margin: none;
+  margin: 0;
 }
 #mdc {
   margin-left: 10px;
   margin-top: 10px;
 }
+#content {
+  margin-left: 50px;
+  margin-top: 50px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+}
 h1 {
-  margin: none;
+	margin-top: 0px;
 }
